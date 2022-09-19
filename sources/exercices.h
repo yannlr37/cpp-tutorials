@@ -3,5 +3,7 @@
 
 void laverie();
 void pgcd();
+void fibonacci();
+void primalite();
 
 #endif
