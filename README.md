@@ -1,11 +1,9 @@
-# Sample code GTK application in C++
-
-## Build project
+# Exercices de code C++
 
 ```
 git clone <this_repository>
 cd <folder>
 cmake .
 make
-./GtkApp
+./App
 ```
