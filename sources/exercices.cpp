@@ -152,3 +152,41 @@ void primalite()
 		std::cout << n << " n'est pas un nombre premier car au moins divisible par "  << divisor << std::endl;
 	}
 }
+
+/*
+	Calcul de la moyenne de N notes
+*/
+void moyenne()
+{
+	int n_notes {0};
+	std::vector<float> notes {};
+
+	do {
+		std::cout << "Veuillez choisir le nombre de notes (entier positif) : ";
+		if (!(std::cin >> n_notes)) {
+			std::cin.clear();
+			std::cin.ignore(255, '\n');
+			std::cout << std::endl;
+		}
+	} while (n_notes == 0);
+
+	for (int i = 0; i < n_notes; i++) {
+		float note {0.0};
+		do {
+			std::cout << "Note " << (i+1) << " : ";
+			if (!(std::cin >> note)) {
+				std::cin.clear();
+				std::cin.ignore(255, '\n');
+				std::cout << std::endl;
+			}
+		} while (note == 0);
+		notes.push_back((float) note);
+	}
+
+	float moyenne {0.0};
+	for (const float n : notes) {
+		moyenne += n;
+	}
+	moyenne = moyenne / notes.size();
+	std::cout << "Votre moyenne est de " << moyenne << std::endl;
+}

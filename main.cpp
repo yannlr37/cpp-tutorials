@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 #include "sources/exercices.h"
 
 int main (int argc, char **argv)
@@ -11,6 +12,7 @@ int main (int argc, char **argv)
   std::cout << " 2- PGCD " << std::endl;
   std::cout << " 3- Fibonacci " << std::endl;
   std::cout << " 4- Primalité " << std::endl;
+  std::cout << " 5- Moyenne " << std::endl;
   
   int choice {0};
 
@@ -31,6 +33,9 @@ int main (int argc, char **argv)
       break;
     case 4:
       primalite();
+      break;
+    case 5:
+      moyenne();
       break;
     default:
       std::cout << "Sorry, this choice does not rely to any existing exercise" << std::endl;

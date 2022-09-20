@@ -5,5 +5,6 @@ void laverie();
 void pgcd();
 void fibonacci();
 void primalite();
+void moyenne();
 
 #endif
