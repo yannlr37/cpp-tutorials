@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named AppTest
+
+# Build rule for target.
+AppTest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 AppTest
+.PHONY : AppTest
+
+# fast build rule for target.
+AppTest/fast:
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/build
+.PHONY : AppTest/fast
+
+#=============================================================================
 # Target rules for targets named App
 
 # Build rule for target.
@@ -156,6 +169,7 @@ sources/exercices.o: sources/exercices.cpp.o
 
 # target to build an object file
 sources/exercices.cpp.o:
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/sources/exercices.cpp.o
 	$(MAKE) -f CMakeFiles/App.dir/build.make CMakeFiles/App.dir/sources/exercices.cpp.o
 .PHONY : sources/exercices.cpp.o
 
@@ -165,6 +179,7 @@ sources/exercices.i: sources/exercices.cpp.i
 
 # target to preprocess a source file
 sources/exercices.cpp.i:
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/sources/exercices.cpp.i
 	$(MAKE) -f CMakeFiles/App.dir/build.make CMakeFiles/App.dir/sources/exercices.cpp.i
 .PHONY : sources/exercices.cpp.i
 
@@ -174,8 +189,36 @@ sources/exercices.s: sources/exercices.cpp.s
 
 # target to generate assembly for a file
 sources/exercices.cpp.s:
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/sources/exercices.cpp.s
 	$(MAKE) -f CMakeFiles/App.dir/build.make CMakeFiles/App.dir/sources/exercices.cpp.s
 .PHONY : sources/exercices.cpp.s
+
+tests.o: tests.cpp.o
+
+.PHONY : tests.o
+
+# target to build an object file
+tests.cpp.o:
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/tests.cpp.o
+.PHONY : tests.cpp.o
+
+tests.i: tests.cpp.i
+
+.PHONY : tests.i
+
+# target to preprocess a source file
+tests.cpp.i:
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/tests.cpp.i
+.PHONY : tests.cpp.i
+
+tests.s: tests.cpp.s
+
+.PHONY : tests.s
+
+# target to generate assembly for a file
+tests.cpp.s:
+	$(MAKE) -f CMakeFiles/AppTest.dir/build.make CMakeFiles/AppTest.dir/tests.cpp.s
+.PHONY : tests.cpp.s
 
 # Help Target
 help:
@@ -185,6 +228,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... AppTest"
 	@echo "... App"
 	@echo "... main.o"
 	@echo "... main.i"
@@ -192,6 +236,9 @@ help:
 	@echo "... sources/exercices.o"
 	@echo "... sources/exercices.i"
 	@echo "... sources/exercices.s"
+	@echo "... tests.o"
+	@echo "... tests.i"
+	@echo "... tests.s"
 .PHONY : help
 
 
